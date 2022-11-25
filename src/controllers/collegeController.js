@@ -2,6 +2,9 @@ const internModel = require('../models/internModel')
 const collegeModel = require('../models/collegeModel')
 
 let createCollege = async function (req, res) {
+    
+    res.setHeader('Access-Control-Allow-Origin', '*')
+
     try {
         if (req.body && Object.keys(req.body).length > 0) {
             let college = await collegeModel.create(req.body)
